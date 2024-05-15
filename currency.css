@@ -1,0 +1,127 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding: 10px 20px;
+}
+
+.header-button {
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #151515;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+}
+
+.header-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #151515;
+    letter-spacing: 1px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.currency {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+}
+
+.currency-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.currency-name > .currency-icon {
+    height: 20px;
+}
+
+.currency-exchange-rate {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.currency-exchange-rate > div > h1 {
+    text-transform: uppercase;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.currency-exchange-rate > div > span {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.date-form {
+    display: flex;
+    gap: 10px;
+}
+
+.date-input {
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #151515;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+}
+
+.date-button {
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: #151515;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+}
