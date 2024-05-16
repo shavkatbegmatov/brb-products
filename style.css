@@ -225,22 +225,28 @@ body {
     text-align: center;
 }
 
-.b {
-    margin-top: 4px;
-    list-style: circle;
-    font-size: 1.2rem;
-    padding-left: 1rem;
-}
-
 .c {
     font-size: 1.4rem;
     font-weight: 700;
     margin-top: 24px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.b {
+    margin-top: 4px;
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+.b li {
+    margin-bottom: 5px;
 }
 
 .c span {
-    color: #E53324 !important;
+    color: #000 !important;
 }
 
 .exchange-page {
