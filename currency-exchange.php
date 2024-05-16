@@ -9,8 +9,15 @@ if (isset($_GET['date'])) {
     $date = date('Y-m-d');
 }
 
+$text = '';
+
 function getExchange($currency, $date) {
-    return R::findOne('exchange', 'date = ? AND currency = ?', [$date, $currency]);
+    return $exchange = R::findOne('exchange', 'date <= ? AND currency = ?', [$date, $currency], 'ORDER BY date DESC');
+    if ($exchange) {
+        return $exchange;
+    } else {
+        return ['buy_rate' => '---', 'sell_rate' => '---'];
+    }
 }
 
 function getExchangeMB($currency, $date) {
@@ -45,8 +52,9 @@ function getExchangeMB($currency, $date) {
         <h1 class="header-heading">Valyutalar kursi</h1>
     </div>
     <div class="content">
-        <form class="date-form" action="currency-exchange.php" method="GET">
-            <input type="date" name="date" class="date-input" value="<?php echo date('Y-m-d'); ?>">
+        <p><?php echo $latestExchange; ?></p>
+        <form class="date-form" action="currency-exchange.php" id="date-form" method="GET">
+            <input type="date" name="date" class="date-input" id="date-input" value="<?php echo date('Y-m-d', strtotime($date)); ?>">
             <button class="date-button">ОК</button>
         </form>
         <div class="currency">
@@ -172,5 +180,10 @@ function getExchangeMB($currency, $date) {
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('date-input').addEventListener('change', function() {
+            document.getElementById('date-form').submit();
+        });
+    </script>
 </body>
 </html>
