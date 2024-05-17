@@ -125,6 +125,14 @@ if ($current_product['type'] == 'page') {
                     <img class="product-icon" src="img/<?php echo $product['icon']; ?>" alt="">
                 </a>
             <?php endforeach; ?>
+            <?php if ($parent_id == '0'): ?>
+                <a class="product" href="currency-exchange.php">
+                    <div class="product-info">
+                        <h1 class="product-heading">Valyutalar kursi</h1>
+                    </div>
+                    <img class="product-icon" src="img/deposit-biznes-percent.png" alt="">
+                </a>
+            <?php endif; ?>
         </div>
     <?php } ?>
     <div class="footer">
