@@ -226,13 +226,14 @@ body {
 }
 
 .c {
+    position: relative;
     font-size: 1.2rem;
     font-weight: 700;
     margin-top: 32px;
     margin-bottom: 10px;
-    background-color: #f1f1f1;
-    padding: 10px 15px;
     border-radius: 10px;
+    border-bottom: #fe0000 2px solid;
+    padding: 5px 10px;
 }
 
 .b {
@@ -247,6 +248,7 @@ body {
 
 .b li::before {
     content: '—';
+    color: #fe0000;
     margin-right: 10px;
 }
 
