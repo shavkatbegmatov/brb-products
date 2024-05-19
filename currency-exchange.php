@@ -23,8 +23,10 @@ function getExchange($currency, $date) {
 function getExchangeMB($currency, $date) {
     $curl = curl_init();
 
+    $url = "https://cbu.uz/uz/arkhiv-kursov-valyut/json/" . $currency . "/" . $date . "/";
+
     curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://cbu.uz/uz/arkhiv-kursov-valyut/json/" . $currency . "/" . $date,
+    CURLOPT_URL => $url,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
