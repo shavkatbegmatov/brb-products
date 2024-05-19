@@ -42,6 +42,18 @@ if ($current_product['type'] == 'page') {
     $products = R::findAll('product', 'parent_id = ? AND visibility = ? ORDER BY sort_order DESC, id ASC', [$parent_id, 'true']);
 }
 
+if ($parent_id == '33') {
+    $sql = "
+        SELECT c.*
+        FROM product AS c
+        JOIN product AS p ON c.parent_id = p.id
+        JOIN product AS gp ON p.parent_id = gp.id
+        WHERE gp.id = 32
+    ";
+
+    $products = R::getAll($sql);
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -225,15 +225,24 @@ body {
     text-align: center;
 }
 
-.c {
-    position: relative;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-top: 32px;
-    margin-bottom: 10px;
+.a {
+    /* background-color: #f1f1f1; */
+    padding: 15px;
     border-radius: 10px;
-    border-bottom: #fe0000 2px solid;
+    border: 1px solid #E53324;
+    margin-bottom: 25px;
+    /* box-shadow: 0px 5px 15px rgba(234,92,80,0.2); */
+}
+
+.c {
+    display: inline-block;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 10px;
     padding: 5px 10px;
+    margin-bottom: 10px;
+    background-color: #ffbab4;
 }
 
 .b {

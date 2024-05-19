@@ -12,9 +12,8 @@ if (isset($_GET['date'])) {
 $text = '';
 
 function getExchange($currency, $date) {
-    return $exchange = R::findOne('exchange', 'date <= ? AND currency = ?', [$date, $currency], 'ORDER BY date DESC');
+    $exchange = R::findOne('exchange', 'date <= ? AND currency = ?', [$date, $currency], 'ORDER BY date DESC');
     if ($exchange) {
-        $text = 'Bu kurs ' . $exchange['date'] . ' da ozgartirilgan!';
         return $exchange;
     } else {
         return ['buy_rate' => '---', 'sell_rate' => '---'];
@@ -22,17 +21,27 @@ function getExchange($currency, $date) {
 }
 
 function getExchangeMB($currency, $date) {
-    $url = 'https://cbu.uz/uz/arkhiv-kursov-valyut/json/' . $currency . '/' . $date;
+    $curl = curl_init();
 
-    $response = file_get_contents($url);
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://cbu.uz/uz/arkhiv-kursov-valyut/json/" . $currency . "/" . $date,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+        "cache-control: no-cache"
+    ),
+    ));
 
-    if ($response === false) {
-        $data = '---';
-    } else {
-        $data = json_decode($response, true)[0]['Rate'];
-    }
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
 
-    return $data;
+    curl_close($curl);
+
+    $data = json_decode($response, true)[0];
+
+    return $data['Rate'];
 }
 
 ?>
