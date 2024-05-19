@@ -9,14 +9,18 @@ if (isset($_GET['date'])) {
     $date = date('Y-m-d');
 }
 
-$text = '';
+echo $date;
 
 function getExchange($currency, $date) {
-    $exchange = R::findOne('exchange', 'date <= ? AND currency = ?', [$date, $currency], 'ORDER BY date DESC');
+    $exchange = R::findOne('exchange', 'date <= ? AND currency = ? ORDER BY date DESC', [$date, $currency]);
+        
     if ($exchange) {
+        if ($exchange['mb_rate'] == '') {
+            $exchange['mb_rate'] = getExchangeMB($currency, $date);
+        }
         return $exchange;
     } else {
-        return ['buy_rate' => '---', 'sell_rate' => '---'];
+        return ['mb_rate' => getExchangeMB($currency, $date), 'buy_rate' => '---', 'sell_rate' => '---'];
     }
 }
 
@@ -64,7 +68,6 @@ function getExchangeMB($currency, $date) {
         <h1 class="header-heading">Valyutalar kursi</h1>
     </div>
     <div class="content">
-        <p><?php echo $text; ?></p>
         <form class="date-form" action="currency-exchange.php" id="date-form" method="GET">
             <input type="date" name="date" class="date-input" id="date-input" value="<?php echo date('Y-m-d', strtotime($date)); ?>">
             <button class="date-button">ОК</button>
@@ -77,7 +80,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('usd', $date); ?></span>
+                    <span><?php echo getExchange('usd', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
@@ -97,7 +100,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('eur', $date); ?></span>
+                    <span><?php echo getExchange('eur', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
@@ -117,7 +120,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('jpy', $date); ?></span>
+                    <span><?php echo getExchange('jpy', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
@@ -137,7 +140,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('gbp', $date); ?></span>
+                    <span><?php echo getExchange('gbp', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
@@ -157,7 +160,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('chf', $date); ?></span>
+                    <span><?php echo getExchange('chf', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
@@ -177,7 +180,7 @@ function getExchangeMB($currency, $date) {
             <div class="currency-exchange-rate">
                 <div>
                     <h1>Markaziy Bank:</h1>
-                    <span><?php echo getExchangeMB('rub', $date); ?></span>
+                    <span><?php echo getExchange('rub', $date)['mb_rate']; ?></span>
                 </div>
                 <div>
                     <h1>Olish:</h1>
