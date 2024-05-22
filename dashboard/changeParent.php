@@ -17,9 +17,20 @@ if (!isset($_GET['target_id'])) {
 }
 
 $product = R::findOne('product', 'id = ?', [$_GET['item_id']]);
+$target_product = R::findOne('product', 'id = ?', [$_GET['target_id']]);
 
-$product['parent_id'] = $_GET['target_id'];
+$target_product_parents = [$target_product['id']];
 
-$id = R::store($product);
-$_SESSION['changedProductId'] = $id;
+while (end($target_product_parents) != '0') {
+    $parent_product = R::findOne('product', 'id = ?', [end($target_product_parents)]);
+    array_push($target_product_parents, $parent_product['parent_id']);
+}
+
+if (!in_array($_GET['item_id'], $target_product_parents)) {
+    $product['parent_id'] = $_GET['target_id'];
+
+    $id = R::store($product);
+    $_SESSION['changedProductId'] = $id;
+}
+
 header('Location: index.php');
