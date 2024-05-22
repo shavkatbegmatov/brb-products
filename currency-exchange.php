@@ -9,8 +9,6 @@ if (isset($_GET['date'])) {
     $date = date('Y-m-d');
 }
 
-echo $date;
-
 function getExchange($currency, $date) {
     $exchange = R::findOne('exchange', 'date <= ? AND currency = ? ORDER BY date DESC', [$date, $currency]);
         
