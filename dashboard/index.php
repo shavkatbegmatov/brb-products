@@ -55,7 +55,7 @@ if (isset($_SESSION['changedProductId'])) {
                     }
                 ?>
                 <div class="product">
-                    <div class="product-box" <?php if ($changedProduct): ?> id="last-changed" <?php endif; ?> data-product-id="<?php echo $product['id']; ?>">
+                    <div class="product-box" draggable="true" <?php if ($changedProduct): ?> id="last-changed" <?php endif; ?> data-product-id="<?php echo $product['id']; ?>">
                         <?php if ($product['type'] == 'category'): ?>
                             <i class="bx bx-category-alt"></i>
                         <?php elseif ($product['type'] == 'page'): ?>
@@ -74,6 +74,9 @@ if (isset($_SESSION['changedProductId'])) {
                             <a class="button small" href="create.php?id=<?php echo $product['id']; ?>" title="Добавить"><i class="bx bx-plus"></i></a>
                         <?php endif; ?>
                         <a class="button small" href="delete.php?id=<?php echo $product['id']; ?>" title="Удалить" onclick="return confirmDelete();"><i class="bx bx-trash"></i></a>
+                        <?php if ($product['parent_id'] != '0'): ?>
+                            <a class="button small" href="parentUp.php?id=<?php echo $product['id']; ?>" title="Поднять на один уровень"><i class="bx bx-chevron-up"></i> Уровень вверх</a>
+                        <?php endif; ?>
 
                         <?php if ($product['visibility'] == 'true'): ?>
                             <a class="button small" href="toggleVisibility.php?id=<?php echo $product['id']; ?>"><i class="bx bx-show"></i></a>
@@ -104,6 +107,30 @@ if (isset($_SESSION['changedProductId'])) {
         ?>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const productList = document.getElementById('products');
+
+            productList.addEventListener('dragstart', function (event) {
+                event.dataTransfer.setData('text/plain', event.target.getAttribute('data-product-id'));
+            });
+
+            productList.addEventListener('dragover', function (event) {
+                event.preventDefault(); // Allow drop
+            });
+
+            productList.addEventListener('drop', function (event) {
+                event.preventDefault();
+                const draggedProductId = event.dataTransfer.getData('text/plain');
+                const targetProductId = event.target.getAttribute('data-product-id');
+
+                if (draggedProductId && targetProductId && draggedProductId !== targetProductId) {
+                    const url = `changeParent.php?item_id=${draggedProductId}&target_id=${targetProductId}`;
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
     <script>
         const a_speed = 300;
 
