@@ -109,27 +109,44 @@ if (isset($_SESSION['changedProductId'])) {
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const productList = document.getElementById('products');
+        const productList = document.getElementById('products');
 
-            productList.addEventListener('dragstart', function (event) {
-                event.dataTransfer.setData('text/plain', event.target.getAttribute('data-product-id'));
-            });
-
-            productList.addEventListener('dragover', function (event) {
-                event.preventDefault(); // Allow drop
-            });
-
-            productList.addEventListener('drop', function (event) {
-                event.preventDefault();
-                const draggedProductId = event.dataTransfer.getData('text/plain');
-                const targetProductId = event.target.getAttribute('data-product-id');
-
-                if (draggedProductId && targetProductId && draggedProductId !== targetProductId) {
-                    const url = `changeParent.php?item_id=${draggedProductId}&target_id=${targetProductId}`;
-                    window.location.href = url;
-                }
-            });
+        productList.addEventListener('dragstart', function (event) {
+            event.dataTransfer.setData('text/plain', event.target.getAttribute('data-product-id'));
         });
+
+        productList.addEventListener('dragover', function (event) {
+            event.preventDefault(); // Allow drop
+        });
+
+        productList.addEventListener('dragenter', function (event) {
+            if (event.target && event.target.hasAttribute('data-product-id')) {
+                event.target.classList.add('drag-over-target'); // Добавить класс
+            }
+        });
+
+        productList.addEventListener('dragleave', function (event) {
+            if (event.target && event.target.hasAttribute('data-product-id')) {
+                event.target.classList.remove('drag-over-target'); // Удалить класс
+            }
+        });
+
+        productList.addEventListener('drop', function (event) {
+            event.preventDefault();
+            const draggedProductId = event.dataTransfer.getData('text/plain');
+            const targetProductId = event.target.getAttribute('data-product-id');
+
+            if (draggedProductId && targetProductId && draggedProductId !== targetProductId) {
+                const url = `changeParent.php?item_id=${draggedProductId}&target_id=${targetProductId}`;
+                window.location.href = url;
+            }
+
+            if (event.target && event.target.hasAttribute('data-product-id')) {
+                event.target.classList.remove('drag-over-target'); // Удалить класс после drop
+            }
+        });
+    });
+
     </script>
     <script>
         const a_speed = 300;

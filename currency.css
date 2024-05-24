@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid #eee;
     padding: 10px 20px;
 }
 
@@ -24,7 +24,7 @@ body {
     background-color: #f1f1f1;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 12.5px;
+    font-size: 12px;
     font-family: inherit;
     font-weight: 500;
     color: #151515;
@@ -35,7 +35,7 @@ body {
 .header-heading {
     text-transform: uppercase;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: #151515;
     letter-spacing: 1px;
@@ -44,15 +44,15 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     padding: 20px;
 }
 
 .currency {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 2px solid #eee;
+    gap: 15px;
+    border: 1px solid #eee;
     border-radius: 5px;
     background: #fff;
     padding: 15px;
@@ -63,8 +63,8 @@ body {
     align-items: center;
     gap: 10px;
     text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
@@ -80,13 +80,13 @@ body {
 
 .currency-exchange-rate > div > h1 {
     text-transform: uppercase;
-    font-size: 12.5px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 1px;
 }
 
 .currency-exchange-rate > div > span {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -103,7 +103,7 @@ body {
     background-color: #f1f1f1;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 14px;
     font-family: inherit;
     font-weight: 500;
     color: #151515;
@@ -118,7 +118,7 @@ body {
     background-color: #151515;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 14px;
     font-family: inherit;
     font-weight: 500;
     color: #fff;

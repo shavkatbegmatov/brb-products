@@ -304,3 +304,7 @@
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
+.drag-over-target {
+    background-color: lightblue;
+}

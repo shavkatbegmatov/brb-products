@@ -43,9 +43,13 @@ function getExchangeMB($currency, $date) {
 
     curl_close($curl);
 
-    $data = json_decode($response, true)[0];
+    $data = json_decode($response, true);
 
-    return $data['Rate'];
+    if (is_array($data)) {
+        return $data[0]['Rate'];
+    } else {
+        return '---';
+    }
 }
 
 ?>
@@ -187,6 +191,46 @@ function getExchangeMB($currency, $date) {
                 <div>
                     <h1>Sotish:</h1>
                     <span><?php echo getExchange('rub', $date)['sell_rate']; ?></span>
+                </div>
+            </div>
+        </div>
+        <div class="currency">
+            <h1 class="currency-name">
+                <img src="currency-icons/usd.png" alt="" class="currency-icon">
+                1 QUANT USD
+            </h1>
+            <div class="currency-exchange-rate">
+                <div>
+                    <h1>Markaziy Bank:</h1>
+                    <span>---</span>
+                </div>
+                <div>
+                    <h1>Olish:</h1>
+                    <span><?php echo getExchange('quant_usd', $date)['buy_rate']; ?></span>
+                </div>
+                <div>
+                    <h1>Sotish:</h1>
+                    <span><?php echo getExchange('quant_usd', $date)['sell_rate']; ?></span>
+                </div>
+            </div>
+        </div>
+                <div class="currency">
+            <h1 class="currency-name">
+                <img src="currency-icons/usd.png" alt="" class="currency-icon">
+                1 ATM USD
+            </h1>
+            <div class="currency-exchange-rate">
+                <div>
+                    <h1>Markaziy Bank:</h1>
+                    <span>---</span>
+                </div>
+                <div>
+                    <h1>Olish:</h1>
+                    <span><?php echo getExchange('atm_usd', $date)['buy_rate']; ?></span>
+                </div>
+                <div>
+                    <h1>Sotish:</h1>
+                    <span><?php echo getExchange('atm_usd', $date)['sell_rate']; ?></span>
                 </div>
             </div>
         </div>
