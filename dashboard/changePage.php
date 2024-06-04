@@ -35,11 +35,12 @@ if (!empty($_POST)) {
         $id = $_GET['id'];
         foreach ($headings as $heading) {
             $heading_text_uz = $_POST[$heading['id'] . '_uz'];
+            $heading_text_ru = $_POST[$heading['id'] . '_ru'];
 
             $headingText = R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading['id'], $page['id']]);
 
             $headingText['text_uz'] = $heading_text_uz;
-            $headingText['text_uz'] = $heading_text_ru;
+            $headingText['text_ru'] = $heading_text_ru;
 
             R::store($headingText);
         }
