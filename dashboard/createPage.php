@@ -16,7 +16,7 @@ if (!isset($_GET['template_id'])) {
     header('Location: index.php');
 }
 
-$headings = R::findAll('heading', 'template_id = ?', [$_GET['template_id']]);
+$headings = R::findAll('templateheading', 'template_id = ?', [$_GET['template_id']]);
 
 if (!empty($_POST)) {
     if ($_GET['template_id'] == 0) {
@@ -90,15 +90,16 @@ if (!empty($_POST)) {
         <?php else: ?>
             <div class="form-sections <?php if ($_GET['template_id'] == '9') { echo 'exchange-form'; } ?>">
                 <?php foreach ($headings as $heading): ?>
+                    <?php $headingobj = R::findOne('heading', 'id = ?', [$heading['heading_id']]); ?>
                     <div class="form-section">
                         <div class="input-container">
-                            <label class="input-label"><?php echo $heading['name_uz']; ?></label>
-                            <input name="<?php echo $heading['id']; ?>_uz" type="text" class="input">
+                            <label class="input-label"><?php echo $headingobj['name_uz']; ?></label>
+                            <input name="<?php echo $headingobj['id']; ?>_uz" type="text" class="input">
                         </div>
                         <?php if ($_GET['template_id'] != '9'): ?>
                         <div class="input-container">
-                            <label class="input-label"><?php echo $heading['name_ru']; ?></label>
-                            <input name="<?php echo $heading['id']; ?>_ru" type="text" class="input">
+                            <label class="input-label"><?php echo $headingobj['name_ru']; ?></label>
+                            <input name="<?php echo $headingobj['id']; ?>_ru" type="text" class="input">
                         </div>
                         <?php endif; ?>
                     </div>

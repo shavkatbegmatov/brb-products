@@ -82,32 +82,20 @@ if ($parent_id == '33') {
             <?php if ($page['template_id'] == 0): ?>
                 <?php echo $page['content_' . $language]; ?>
             <?php else: ?>
-                <div class="<?php if ($page['template_id'] == 9) { echo 'exchange-page'; } ?>">
-                    <?php if ($page['template_id'] == 9): ?>
-                        <?php $headings = R::findAll('heading', 'template_id = ?', [$page['template_id']]); $headings = array_chunk($headings, 2); ?>
-                        <?php foreach ($headings as $heading): ?>
-                            <!-- <?php debug($headings); ?> -->
-                            <div class="a">
-                                <p  class="c"><?php echo explode(' ', $heading[0]['name_' . $language])[0]; ?>:</p>
-                            </div>
-                            <div class="a">
-                                <p  class="c"><?php echo explode(' ', $heading[0]['name_' . $language])[1]; ?> / <?php echo explode(' ', $heading[1]['name_' . $language])[1]; ?>:</p>
-                                <ul class="b">
-                                    <li><?php echo R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading[0]['id'], $page['id']])['text_' . $language]; ?> / <?php echo R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading[1]['id'], $page['id']])['text_' . $language]; ?></li>
-                                </ul>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <?php $headings = R::findAll('heading', 'template_id = ?', [$page['template_id']]); ?>
-                        <?php foreach ($headings as $heading): ?>
-                            <div class="a">
-                                <p  class="c"><?php echo $heading['name_' . $language]; ?>:</p>
-                                <ul class="b">
-                                    <li><?php echo R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading['id'], $page['id']])['text_' . $language]; ?></li>
-                                </ul>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                <div>
+                    <?php
+                        $template_headings = R::findAll('templateheading', 'template_id = ?', [$page['template_id']]);
+                    ?>
+                    <?php foreach ($template_headings as $template_heading): ?>
+                        <?php $heading = R::findOne('heading', 'id = ?', [$template_heading['heading_id']]); ?>
+
+                        <div class="a">
+                            <p  class="c"><?php echo $heading['name_' . $language]; ?>:</p>
+                            <ul class="b">
+                                <li><?php echo R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading['id'], $page['id']])['text_' . $language]; ?></li>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
         </div>

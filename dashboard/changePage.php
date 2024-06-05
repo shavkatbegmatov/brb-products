@@ -14,7 +14,7 @@ if (!isset($_GET['id'])) {
 
 $page = R::findOne('page', 'id = ?', [$_GET['id']]);
 
-$headings = R::findAll('heading', 'template_id = ?', [$page['template_id']]);
+$headings = R::findAll('templateheading', 'template_id = ?', [$page['template_id']]);
 
 if (!empty($_POST)) {
     if ($page['template_id'] == 0) {
@@ -83,17 +83,18 @@ if (!empty($_POST)) {
             <div class="form-sections <?php if ($page['template_id'] == '9') { echo 'exchange-form'; } ?>">
                 <?php foreach ($headings as $heading): ?>
                     <?php
+                        $headingobj = R::findOne('heading', 'id = ?', [$heading['heading_id']]);
                         $text = R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading['id'], $page['id']]);
                     ?>
                     <div class="form-section">
                         <div class="input-container">
-                            <label class="input-label"><?php echo $heading['name_uz']; ?></label>
-                            <input name="<?php echo $heading['id']; ?>_uz" type="text" class="input" value="<?php echo $text['text_uz']; ?>">
+                            <label class="input-label"><?php echo $headingobj['name_uz']; ?></label>
+                            <input name="<?php echo $headingobj['id']; ?>_uz" type="text" class="input" value="<?php echo $text['text_uz']; ?>">
                         </div>
                         <?php if ($page['template_id'] != '9'): ?>
                         <div class="input-container">
-                            <label class="input-label"><?php echo $heading['name_ru']; ?></label>
-                            <input name="<?php echo $heading['id']; ?>_ru" type="text" class="input" value="<?php echo $text['text_ru']; ?>">
+                            <label class="input-label"><?php echo $headingobj['name_ru']; ?></label>
+                            <input name="<?php echo $headingobj['id']; ?>_ru" type="text" class="input" value="<?php echo $text['text_ru']; ?>">
                         </div>
                         <?php endif; ?>
                     </div>

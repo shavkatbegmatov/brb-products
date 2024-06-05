@@ -30,35 +30,31 @@ if (isset($_SESSION['changedTemplateId'])) {
 <body class="dashboard-body">
     <a href="index.php" class="button small">Назад</a>
     <a href="createTemplate.php" class="button small"><i class="bx bx-plus"></i> Добавить шаблон</a>
+    <a href="heading.php" class="button small"><i class="bx bx-plus"></i> Заголовки</a>
     <br>
     <br>
     <div class="products" id="products">
-        <?php
-        function template($templates) {
-            foreach ($templates as $template): ?>
-                <?php
-                    $changedTemplate = false;
-                    if (isset($_SESSION['changedTemplateId'])) {
-                        if ($template['id'] == $_SESSION['changedTemplateId']) {
-                            $changedTemplate = true;
-                        }
-                        unset($_SESSION['changedTemplateId']);
+        <?php foreach ($templates as $template): ?>
+            <?php
+                $changedTemplate = false;
+                if (isset($_SESSION['changedTemplateId'])) {
+                    if ($template['id'] == $_SESSION['changedTemplateId']) {
+                        $changedTemplate = true;
                     }
-                ?>
-                <div class="product">
-                    <div class="product-box" <?php if ($changedTemplate): ?> id="last-changed" <?php endif; ?>>
-                        <?php echo $template['name']; ?>
+                    unset($_SESSION['changedTemplateId']);
+                }
+            ?>
+            <div class="product">
+                <div class="product-box" <?php if ($changedTemplate): ?> id="last-changed" <?php endif; ?>>
+                    <?php echo $template['name']; ?>
 
-                        <hr class="product-divider">
+                    <hr class="product-divider">
 
-                        <a class="button small" href="changeTemplateHeadings.php?id=<?php echo $template['id']; ?>" title="Редактировать заголовки"><i class="bx bx-edit"></i></a>
-                        <a class="button small" href="changeTemplate.php?id=<?php echo $template['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
-                    </div>
+                    <a class="button small" href="changeTemplateHeadings.php?id=<?php echo $template['id']; ?>" title="Редактировать заголовки"><i class="bx bx-edit"></i></a>
+                    <a class="button small" href="changeTemplate.php?id=<?php echo $template['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
                 </div>
-            <?php endforeach; 
-        } 
-        template($templates);
-        ?>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <script>

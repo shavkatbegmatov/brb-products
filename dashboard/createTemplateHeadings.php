@@ -15,18 +15,19 @@ if (!isset($_GET['id'])) {
 $template = R::findOne('template', 'id = ?', [$_GET['id']]);
 
 if (!empty($_POST)) {
-    foreach ($_POST['name_ru'] as $key => $name_ru) {
-        $templateHeading = R::dispense('heading');
+    foreach ($_POST['heading'] as $key => $heading) {
+        $templateHeading = R::dispense('templateheading');
         
-        $templateHeading['name_ru'] = $name_ru;
-        $templateHeading['name_uz'] = $_POST['name_uz'][$key];
         $templateHeading['template_id'] = $_GET['id'];
+        $templateHeading['heading_id'] = $heading;
         
         R::store($templateHeading);
 
         header('Location: template.php');
     }
 }
+
+$headings = R::findAll('heading');
 
 ?>
 
@@ -55,12 +56,12 @@ if (!empty($_POST)) {
             <div class="form-section">
                 <h2 class="form-subheading">Заголовок</h2>
                 <div class="input-container">
-                    <label class="input-label">Названия на узбекском</label>
-                    <input name="name_uz[]" type="text" class="input">
-                </div>
-                <div class="input-container">
-                    <label class="input-label">Названия на русском</label>
-                    <input name="name_ru[]" type="text" class="input">
+                    <label class="input-label">Выберите заголовок</label>
+                    <select name="heading[]" class="input">
+                        <?php foreach ($headings as $heading): ?>
+                            <option value="<?php echo $heading['id']; ?>"><?php echo $heading['name_ru']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
         </div>

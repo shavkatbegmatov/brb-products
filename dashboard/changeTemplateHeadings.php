@@ -15,7 +15,7 @@ if (!isset($_GET['id'])) {
 $template = R::findOne('template', 'id = ?', [$_GET['id']]);
 
 // Fetch existing headings associated with the template
-$templateHeadings = R::findAll('heading', 'template_id = ?', [$_GET['id']]);
+$templateHeadings = R::findAll('templateheading', 'template_id = ?', [$_GET['id']]);
 
 if (!empty($_POST)) {
     // Update template headings
@@ -35,6 +35,8 @@ if (!empty($_POST)) {
     header('Location: template.php');
     exit();
 }
+
+$headings = R::findAll('heading');
 
 ?>
 
@@ -62,12 +64,12 @@ if (!empty($_POST)) {
                 <div class="form-section">
                     <h2 class="form-subheading">Заголовок</h2>
                     <div class="input-container">
-                        <label class="input-label">Названия на узбекском</label>
-                        <input name="<?php echo $heading->id; ?>_uz" type="text" class="input" value="<?php echo $heading->name_uz; ?>">
-                    </div>
-                    <div class="input-container">
-                        <label class="input-label">Названия на русском</label>
-                        <input name="<?php echo $heading->id; ?>_ru" type="text" class="input" value="<?php echo $heading->name_ru; ?>">
+                        <label class="input-label">Выберите заголовок</label>
+                        <select name="heading[]" class="input">
+                            <?php foreach ($headings as $heading): ?>
+                                <option value="<?php echo $heading['id']; ?>"><?php echo $heading['name_ru']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
             <?php endforeach; ?>
