@@ -61,12 +61,16 @@ if (isset($_SESSION['changedProductId'])) {
                         <?php elseif ($product['type'] == 'page'): ?>
                             <i class="bx bx-news"></i>
                         <?php endif; ?>
+
+                        <span class="product-sort-order">ID: <?php echo $product['id']; ?></span>
+
                         <?php echo $product['name_ru']; ?>
+                        
 
                         <hr class="product-divider">
 
                         <?php if ($product['type'] == 'page'): ?>
-                            <?php $page = R::findOne('page', 'parent_id = ?', [$product['id']]);?>
+                            <?php $page = R::findOne('page', 'parent_id = ?', [$product['id']]); ?>
                             <a class="button small" href="changePage.php?id=<?php echo $page['id']; ?>" title="Редактировать контент"><i class="bx bx-edit"></i></a>
                         <?php endif; ?>
                         <a class="button small" href="change.php?id=<?php echo $product['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>

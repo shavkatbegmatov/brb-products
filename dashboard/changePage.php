@@ -29,15 +29,17 @@ if (!empty($_POST)) {
             $changePage['content_ru'] = $content_ru;
             R::store($changePage);
     
+            $_SESSION['changedProductId'] = $page['parent_id'];
             header('Location: index.php');
         }
     } else {
         $id = $_GET['id'];
         foreach ($headings as $heading) {
-            $heading_text_uz = $_POST[$heading['id'] . '_uz'];
-            $heading_text_ru = $_POST[$heading['id'] . '_ru'];
+            $headingobj = R::findOne('heading', 'id = ?', [$heading['heading_id']]);
+            $heading_text_uz = $_POST[$headingobj['id'] . '_uz'];
+            $heading_text_ru = $_POST[$headingobj['id'] . '_ru'];
 
-            $headingText = R::findOne('text', 'heading_id = ? AND page_id = ?', [$heading['id'], $page['id']]);
+            $headingText = R::findOne('text', 'heading_id = ? AND page_id = ?', [$headingobj['id'], $page['id']]);
 
             $headingText['text_uz'] = $heading_text_uz;
             $headingText['text_ru'] = $heading_text_ru;
@@ -45,6 +47,7 @@ if (!empty($_POST)) {
             R::store($headingText);
         }
 
+        $_SESSION['changedProductId'] = $page['parent_id'];
         header('Location: index.php');
     }
 }

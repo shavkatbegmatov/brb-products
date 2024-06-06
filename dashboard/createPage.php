@@ -31,8 +31,9 @@ if (!empty($_POST)) {
             $page['content_ru'] = $content_ru;
             $page['parent_id'] = $_GET['id'];
             $page['template_id'] = $_GET['template_id'];
-            R::store($page);
+            $id = R::store($page);
     
+            $_SESSION['changedProductId'] = $id;
             header('Location: index.php');
         }
     } else {
@@ -43,16 +44,18 @@ if (!empty($_POST)) {
         $page['template_id'] = $_GET['template_id'];
         $id = R::store($page);
         foreach ($headings as $heading) {
-            $heading_text_uz = $_POST[$heading['id'] . '_uz'];
+            $headingobj = R::findOne('heading', 'id = ?', [$heading['heading_id']]);
+            $heading_text_uz = $_POST[$headingobj['id'] . '_uz'];
 
             $headingText = R::dispense('text');
             $headingText['text_uz'] = $heading_text_uz;
             $headingText['text_ru'] = $heading_text_uz;
-            $headingText['heading_id'] = $heading['id'];
+            $headingText['heading_id'] = $headingobj['id'];
             $headingText['page_id'] = $id;
-            R::store($headingText);
+            $id = R::store($headingText);
         }
 
+        $_SESSION['changedProductId'] = $id;
         header('Location: index.php');
     }
 }
