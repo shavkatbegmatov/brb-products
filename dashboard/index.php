@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
     header('Location: log.php');
 }
 
-$products = R::findAll('product', 'parent_id = ? ORDER BY sort_order DESC, id ASC', ['0']);
+$products = R::findAll('product', 'parent_id = ? AND deleted = ? ORDER BY sort_order DESC, id ASC', ['0', '0']);
 
 if (isset($_SESSION['changedProductId'])) {
     $changedProductId = $_SESSION['changedProductId'];
@@ -97,7 +97,7 @@ if (isset($_SESSION['changedProductId'])) {
                         <?php endif; ?>
                     </div>
                     <?php if ($product['type'] == 'category'): ?>
-                        <?php $childProducts = R::findAll('product', 'parent_id = ? ORDER BY sort_order DESC, id ASC', [$product['id']]); ?>
+                        <?php $childProducts = R::findAll('product', 'parent_id = ? AND deleted = ? ORDER BY sort_order DESC, id ASC', [$product['id'], '0']); ?>
                         <?php if ($childProducts): ?> 
                             <div class="products" id="<?php echo $product['id']; ?>">
                                 <?php productTree($childProducts); ?>
