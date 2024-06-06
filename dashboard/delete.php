@@ -25,14 +25,6 @@ function deleteProduct($productId) {
     $product = R::load('product', $productId);
 
     if ($product->id) {
-        // If the product is of type 'page', delete associated page
-        if ($product->type == 'page') {
-            $page = R::findOne('page', 'parent_id = ?', [$product->id]);
-            if ($page) {
-                R::trash($page);
-            }
-        }
-
         // Find and delete all child products
         $child_products = R::find('product', 'parent_id = ?', [$productId]);
         foreach ($child_products as $child_product) {
@@ -40,7 +32,9 @@ function deleteProduct($productId) {
         }
 
         // Delete the product
-        R::trash($product);
+        $product['deleted'] = 1;
+        
+        R::store($product);
     }
 }
 
