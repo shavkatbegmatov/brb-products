@@ -224,3 +224,167 @@ Stack trace:
 [06-Jun-2024 09:33:05 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
 [06-Jun-2024 09:33:07 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
 [06-Jun-2024 09:34:38 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 09:59:53 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 09:59:55 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:00:16 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:00:16 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:00:20 UTC] PHP Warning:  Undefined variable $main_id in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 36
+[06-Jun-2024 10:00:20 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 36
+[06-Jun-2024 10:00:20 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:00:45 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:00:56 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:00:56 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:01:02 UTC] PHP Warning:  Undefined variable $main_id in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 36
+[06-Jun-2024 10:01:02 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 36
+[06-Jun-2024 10:01:02 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:01:34 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:01:35 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:01:42 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 38
+[06-Jun-2024 10:01:42 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:01:51 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:02:00 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:02:00 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:02:04 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 38
+[06-Jun-2024 10:02:04 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 10:02:42 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:02:42 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:02:44 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:02:44 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:02:45 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:02:45 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:02:55 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:02:56 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:03:03 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 38
+[06-Jun-2024 10:03:03 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:03:50 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:03:50 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:07:00 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:07:00 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:07:08 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:07:08 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:07:11 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:07:11 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:09:48 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:09:48 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:09:50 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:09:50 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:09:56 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:09:56 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:10:00 UTC] PHP Warning:  Attempt to read property "parent_id" on null in /home/ztechuz/products.z-tech.uz/dashboard/delete.php on line 51
+[06-Jun-2024 10:10:00 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:10:00 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:13:40 UTC] PHP Warning:  Undefined array key "changedProductId" in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 26
+[06-Jun-2024 10:13:40 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:13:45 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 10:13:45 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 10:13:48 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 76
+[06-Jun-2024 11:31:09 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:31:15 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:32:13 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 11:32:13 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:32:17 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:33:46 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:34:04 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:34:04 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:34:05 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:34:09 UTC] PHP Warning:  Undefined array key "template_id" in /home/ztechuz/products.z-tech.uz/dashboard/create.php on line 27
+[06-Jun-2024 11:34:09 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:34:13 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:35:03 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 11:35:37 UTC] PHP Fatal error:  Uncaught [HY093] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+trace: #0 /home/ztechuz/products.z-tech.uz/connect/rb.php(1175): RedBeanPHP\Driver\RPDO->runQuery('SELECT `product...', Array)
+#1 /home/ztechuz/products.z-tech.uz/connect/rb.php(4374): RedBeanPHP\Driver\RPDO->GetAll('SELECT `product...', Array)
+#2 /home/ztechuz/products.z-tech.uz/connect/rb.php(6625): RedBeanPHP\Adapter\DBAdapter->get('SELECT `product...', Array)
+#3 /home/ztechuz/products.z-tech.uz/connect/rb.php(8464): RedBeanPHP\QueryWriter\AQueryWriter->queryRecord('product', Array, 'parent_id = ? A...', Array)
+#4 /home/ztechuz/products.z-tech.uz/connect/rb.php(9584): RedBeanPHP\Repository->find('product', Array, 'parent_id = ? A...', Array)
+#5 /home/ztechuz/products.z-tech.uz/connect/rb.php(10210): RedBeanPHP\OODB->find('product', Array, 'parent_id = ? A...', Array)
+#6 /home/ztechuz/products.z-tech.uz/connect/rb.php(12964): RedBeanPHP\Finder->find('product', 'parent_id = ? A...', Array)
+#7 /home/ztechuz/products.z-tech.uz/dashboard/index.php(100): RedBeanPHP\Facade::findAll('product', 'parent_id = ? A...', Array)
+#8 /home/ztechuz/products.z-tech.uz/dashboard/index.php(110): productTree(Array)
+#9 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/connect/rb.php on line 838
+[06-Jun-2024 11:35:39 UTC] PHP Fatal error:  Uncaught [HY093] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+trace: #0 /home/ztechuz/products.z-tech.uz/connect/rb.php(1175): RedBeanPHP\Driver\RPDO->runQuery('SELECT `product...', Array)
+#1 /home/ztechuz/products.z-tech.uz/connect/rb.php(4374): RedBeanPHP\Driver\RPDO->GetAll('SELECT `product...', Array)
+#2 /home/ztechuz/products.z-tech.uz/connect/rb.php(6625): RedBeanPHP\Adapter\DBAdapter->get('SELECT `product...', Array)
+#3 /home/ztechuz/products.z-tech.uz/connect/rb.php(8464): RedBeanPHP\QueryWriter\AQueryWriter->queryRecord('product', Array, 'parent_id = ? A...', Array)
+#4 /home/ztechuz/products.z-tech.uz/connect/rb.php(9584): RedBeanPHP\Repository->find('product', Array, 'parent_id = ? A...', Array)
+#5 /home/ztechuz/products.z-tech.uz/connect/rb.php(10210): RedBeanPHP\OODB->find('product', Array, 'parent_id = ? A...', Array)
+#6 /home/ztechuz/products.z-tech.uz/connect/rb.php(12964): RedBeanPHP\Finder->find('product', 'parent_id = ? A...', Array)
+#7 /home/ztechuz/products.z-tech.uz/dashboard/index.php(100): RedBeanPHP\Facade::findAll('product', 'parent_id = ? A...', Array)
+#8 /home/ztechuz/products.z-tech.uz/dashboard/index.php(110): productTree(Array)
+#9 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/connect/rb.php on line 838
+[06-Jun-2024 11:35:57 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 12:58:55 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 12:58:57 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 12:59:04 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:04 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:50 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:50 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:51 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:51 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:53 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 12:59:55 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 12:59:58 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 12:59:58 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:15 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:15 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:16 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:16 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:16 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:16 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:17 UTC] PHP Warning:  Undefined variable $R in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:17 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/dashboard/changePage.php on line 17
+[06-Jun-2024 13:00:17 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:00:18 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:00:19 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:00:36 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:00:37 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:00:47 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:24:01 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:24:17 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 13:24:46 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[06-Jun-2024 14:20:20 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:12:16 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:12:18 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:12:48 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:13:02 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:14:02 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:14:09 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:14:13 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:14:14 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:15:29 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:16:58 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:16:58 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 08:19:01 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:35:14 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:35:16 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:44:29 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:47:54 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:48:06 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74
+[07-Jun-2024 09:49:33 UTC] PHP Warning:  Trying to access array offset on null in /home/ztechuz/products.z-tech.uz/dashboard/index.php on line 74

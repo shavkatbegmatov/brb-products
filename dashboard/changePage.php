@@ -14,6 +14,8 @@ if (!isset($_GET['id'])) {
 
 $page = R::findOne('page', 'id = ?', [$_GET['id']]);
 
+$page_parent_product = R::findOne('product', 'id = ?', [$page['parent_id']]);
+
 $headings = R::findAll('templateheading', 'template_id = ?', [$page['template_id']]);
 
 if (!empty($_POST)) {
@@ -64,7 +66,11 @@ if (!empty($_POST)) {
 </head>
 <body class="dashboard-body">
     <form class="form" method="post" action="changePage.php?id=<?php echo $_GET['id']; ?>">
-        <h1 class="heading">Редактировать страницу</h1>
+        <h1 class="heading">
+            Редактировать страницу
+            <br>
+            "<?php echo $page_parent_product['name_ru']; ?>"
+        </h1>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="message">
                 <?php echo $_SESSION['message']; unset($_SESSION['message']); ?>
@@ -74,13 +80,13 @@ if (!empty($_POST)) {
         <h2 class="form-subheading">На узбекском</h2>
         <div class="input-container">
             <label class="input-label">Контент</label>
-            <textarea name="content_uz" type="text" class="input"><?php echo $page['content_uz']; ?></textarea>
+            <textarea name="content_uz" type="text" class="input" rows="10"><?php echo $page['content_uz']; ?></textarea>
         </div>
         <hr>
         <h2 class="form-subheading">На русском</h2>
         <div class="input-container">
             <label class="input-label">Контент</label>
-            <textarea name="content_ru" type="text" class="input"><?php echo $page['content_ru']; ?></textarea>
+            <textarea name="content_ru" type="text" class="input" rows="10"><?php echo $page['content_ru']; ?></textarea>
         </div>
         <?php else: ?>
             <div class="form-sections <?php if ($page['template_id'] == '9') { echo 'exchange-form'; } ?>">
@@ -105,7 +111,16 @@ if (!empty($_POST)) {
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Сохранить</button>
+            <a href="index.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

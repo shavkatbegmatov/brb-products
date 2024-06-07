@@ -1,0 +1,28 @@
+[06-Jun-2024 02:00:58 UTC] PHP Fatal error:  Uncaught PDOException: Could not connect to database (brb_products). in /home/ztechuz/products.z-tech.uz/connect/rb.php:1105
+Stack trace:
+#0 /home/ztechuz/products.z-tech.uz/connect/rb.php(798): RedBeanPHP\Driver\RPDO->connect()
+#1 /home/ztechuz/products.z-tech.uz/connect/rb.php(1175): RedBeanPHP\Driver\RPDO->runQuery('SELECT `product...', Array)
+#2 /home/ztechuz/products.z-tech.uz/connect/rb.php(4374): RedBeanPHP\Driver\RPDO->GetAll('SELECT `product...', Array)
+#3 /home/ztechuz/products.z-tech.uz/connect/rb.php(6625): RedBeanPHP\Adapter\DBAdapter->get('SELECT `product...', Array)
+#4 /home/ztechuz/products.z-tech.uz/connect/rb.php(8464): RedBeanPHP\QueryWriter\AQueryWriter->queryRecord('product', Array, 'id = ? LIMIT 1 ', Array)
+#5 /home/ztechuz/products.z-tech.uz/connect/rb.php(9584): RedBeanPHP\Repository->find('product', Array, 'id = ? LIMIT 1 ', Array)
+#6 /home/ztechuz/products.z-tech.uz/connect/rb.php(10210): RedBeanPHP\OODB->find('product', Array, 'id = ? LIMIT 1 ', Array)
+#7 /home/ztechuz/products.z-tech.uz/connect/rb.php(10255): RedBeanPHP\Finder->find('product', 'id = ? LIMIT 1 ', Array)
+#8 /home/ztechuz/products.z-tech.uz/connect/rb.php(12998): RedBeanPHP\Finder->findOne('product', 'id = ? LIMIT 1 ', Array)
+#9 /home/ztechuz/products.z-tech.uz/index.php(33): RedBeanPHP\Facade::findOne('product', 'id = ?', Array)
+#10 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/connect/rb.php on line 1105
+[06-Jun-2024 02:01:04 UTC] PHP Fatal error:  Uncaught PDOException: Could not connect to database (brb_products). in /home/ztechuz/products.z-tech.uz/connect/rb.php:1105
+Stack trace:
+#0 /home/ztechuz/products.z-tech.uz/connect/rb.php(798): RedBeanPHP\Driver\RPDO->connect()
+#1 /home/ztechuz/products.z-tech.uz/connect/rb.php(1175): RedBeanPHP\Driver\RPDO->runQuery('SELECT `product...', Array)
+#2 /home/ztechuz/products.z-tech.uz/connect/rb.php(4374): RedBeanPHP\Driver\RPDO->GetAll('SELECT `product...', Array)
+#3 /home/ztechuz/products.z-tech.uz/connect/rb.php(6625): RedBeanPHP\Adapter\DBAdapter->get('SELECT `product...', Array)
+#4 /home/ztechuz/products.z-tech.uz/connect/rb.php(8464): RedBeanPHP\QueryWriter\AQueryWriter->queryRecord('product', Array, 'id = ? LIMIT 1 ', Array)
+#5 /home/ztechuz/products.z-tech.uz/connect/rb.php(9584): RedBeanPHP\Repository->find('product', Array, 'id = ? LIMIT 1 ', Array)
+#6 /home/ztechuz/products.z-tech.uz/connect/rb.php(10210): RedBeanPHP\OODB->find('product', Array, 'id = ? LIMIT 1 ', Array)
+#7 /home/ztechuz/products.z-tech.uz/connect/rb.php(10255): RedBeanPHP\Finder->find('product', 'id = ? LIMIT 1 ', Array)
+#8 /home/ztechuz/products.z-tech.uz/connect/rb.php(12998): RedBeanPHP\Finder->findOne('product', 'id = ? LIMIT 1 ', Array)
+#9 /home/ztechuz/products.z-tech.uz/index.php(33): RedBeanPHP\Facade::findOne('product', 'id = ?', Array)
+#10 {main}
+  thrown in /home/ztechuz/products.z-tech.uz/connect/rb.php on line 1105

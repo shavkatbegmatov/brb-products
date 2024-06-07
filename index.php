@@ -39,7 +39,7 @@ if ($parent_id == '0') {
 if ($current_product['type'] == 'page') {
     $page = R::findOne('page', 'parent_id = ?', [$current_product['id']]);
 } else if ($current_product['type'] == 'category') {
-    $products = R::findAll('product', 'parent_id = ? AND visibility = ? ORDER BY sort_order DESC, id ASC', [$parent_id, 'true']);
+    $products = R::findAll('product', 'parent_id = ? AND visibility = ? AND deleted = ? ORDER BY sort_order DESC, id ASC', [$parent_id, 'true', '0']);
 }
 
 if ($parent_id == '33') {
@@ -66,6 +66,7 @@ if ($parent_id == '33') {
     <link rel="stylesheet" href="style.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='/font/css/all.min.css' rel='stylesheet'>
 </head>
 <body class="user-side">
     <div class="header-top">

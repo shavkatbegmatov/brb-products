@@ -49,9 +49,6 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dashboard-body">
-    <a href="index.php" class="button small">Назад</a>
-    <br>
-    <br>
     <form class="form" method="post" action="change.php?id=<?php echo $product['id']; ?>">
         <h1 class="heading">Редактировать</h1>
         <?php if (isset($_SESSION['message'])): ?>
@@ -84,7 +81,16 @@ if (!empty($_POST)) {
             <input placeholder='icon.png' name="icon" type="text" class="input" value="<?php echo $product['icon']; ?>" style="font-family: monospace;">
         </div>
         <hr>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Сохранить</button>
+            <a href="index.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

@@ -189,6 +189,11 @@ select.input {
 	font-size: 25px;
 }
 
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
 .button {
 	appearance: none;
 	background-color: #fafbfc;
@@ -219,8 +224,27 @@ select.input {
 	word-wrap: break-word;
 }
 
+.button.green {
+    background-color: #0edd0e;
+	border: 1px solid #0edd0e;
+    color: #fff;
+}
+
+.button.green:hover {
+    background-color: #0cba0c;
+	border: 1px solid #0cba0c;
+    color: #fff;
+}
+
+.button.green:active {
+    background-color: #0c950c;
+	border: 1px solid #0c950c;
+    color: #fff;
+}
+
 .input {
-	appearance: none;
+    width: 100%;
+	/* appearance: none; */
 	background-color: #fff;
 	border: 1px solid rgba(27, 31, 35, 0.15);
 	border-radius: 4px;
@@ -244,6 +268,10 @@ select.input {
 	vertical-align: middle;
 	white-space: nowrap;
 	word-wrap: break-word;
+}
+
+textarea.input {
+    font-family: monospace;
 }
 
 .button:hover {

@@ -64,9 +64,6 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dashboard-body">
-    <a href="index.php" class="button small">Назад</a>
-    <br>
-    <br>
     <form class="form" method="post" action="create.php?id=<?php echo $_GET['id']; ?>">
         <h1 class="heading">Создать</h1>
         <?php if (isset($_SESSION['message'])): ?>
@@ -105,13 +102,18 @@ if (!empty($_POST)) {
         </div>
         <div class="radio-container" id="box" style="display: none;">
             <label class="input-label">Вид страницы</label>
-            <label class="radio-label"><input type="radio" name="template_id" value="0"> Без шаблона</label>
-            <?php foreach ($templates as $template): ?>
-                <label class="radio-label"><input type="radio" name="template_id" value="<?php echo $template['id']; ?>"> <?php echo $template['name']; ?></label>
-            <?php endforeach; ?>
+            <select class="input" name="template_id">
+                <option value="0">Без шаблона</option>
+                <?php foreach ($templates as $template): ?>
+                    <option value="<?php echo $template['id']; ?>"><?php echo $template['name']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <hr>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Сохранить</button>
+            <a href="index.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
 
     <script>
@@ -130,6 +132,10 @@ if (!empty($_POST)) {
                 box.style.display = "none";
             }
         });
+
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
     </script>
 </body>
 </html>
