@@ -136,10 +136,6 @@ select.input {
 	padding: 3px;
 }
 
-.button i {
-	font-size: 1.35rem;
-}
-
 .form .button {
 	width: 100%;
 }
@@ -168,6 +164,7 @@ select.input {
 .product-box {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	gap: 8px;
 	border-radius: 4px;
 	border: none;
@@ -181,11 +178,17 @@ select.input {
 	user-select: none;
 }
 
+.product-group {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
 .product-box:hover, #last-changed {
 	background-color: rgba(27, 31, 35, 0.1);
 }
 
-.product-box > i {
+.product-group > i {
 	font-size: 25px;
 }
 
@@ -224,22 +227,56 @@ select.input {
 	word-wrap: break-word;
 }
 
-.button.green {
-    background-color: #0edd0e;
-	border: 1px solid #0edd0e;
-    color: #fff;
+.button > i {
+	font-size: 20px;
 }
 
-.button.green:hover {
+.button.green {
     background-color: #0cba0c;
 	border: 1px solid #0cba0c;
     color: #fff;
 }
 
-.button.green:active {
+.button.green:hover {
     background-color: #0c950c;
 	border: 1px solid #0c950c;
+}
+
+.button.green:active {
+    background-color: #097909;
+	border: 1px solid #097909;
+}
+
+.button.red {
+    background-color: #ba0c0c;
+	border: 1px solid #ba0c0c;
     color: #fff;
+}
+
+.button.red:hover {
+    background-color: #950c0c;
+	border: 1px solid #950c0c;
+}
+
+.button.red:active {
+    background-color: #790909;
+	border: 1px solid #790909;
+}
+
+.button.yellow {
+    background-color: #f3a811;
+	border: 1px solid #f3a811;
+    color: #fff;
+}
+
+.button.yellow:hover {
+    background-color: #da960f;
+	border: 1px solid #da960f;
+}
+
+.button.yellow:active {
+    background-color: #c3860c;
+	border: 1px solid #c3860c;
 }
 
 .input {

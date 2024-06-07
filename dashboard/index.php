@@ -56,45 +56,46 @@ if (isset($_SESSION['changedProductId'])) {
                 ?>
                 <div class="product">
                     <div class="product-box" draggable="true" <?php if ($changedProduct): ?> id="last-changed" <?php endif; ?> data-product-id="<?php echo $product['id']; ?>">
-                        <?php if ($product['type'] == 'category'): ?>
-                            <i class="bx bx-category-alt"></i>
-                        <?php elseif ($product['type'] == 'page'): ?>
-                            <i class="bx bx-news"></i>
-                        <?php endif; ?>
-
-                        <span class="product-sort-order">ID: <?php echo $product['id']; ?></span>
-
-                        <?php echo $product['name_ru']; ?>
+                        <div class="product-group">
+                            <?php if ($product['type'] == 'category'): ?>
+                                <i class="bx bx-category-alt"></i>
+                            <?php elseif ($product['type'] == 'page'): ?>
+                                <i class="bx bx-news"></i>
+                            <?php endif; ?>
+    
+                            <span class="product-sort-order">ID: <?php echo $product['id']; ?></span>
+    
+                            <?php echo $product['name_ru']; ?>
+                        </div>
                         
+                        <div class="product-group">
+                            <span class="product-sort-order">Уровень приоритета: <?php echo $product['sort_order']; ?></span>
+                            <a class="button small" href="changeOrder.php?id=<?php echo $product['id']; ?>&direction=up"><i class="bx bx-up-arrow-alt"></i></a>
+                            <?php if ($product['sort_order'] != '0'): ?>
+                                <a class="button small" href="changeOrder.php?id=<?php echo $product['id']; ?>&direction=down"><i class="bx bx-down-arrow-alt"></i></a>
+                            <?php endif; ?>
 
-                        <hr class="product-divider">
+                            <hr class="product-divider">
 
-                        <?php if ($product['type'] == 'page'): ?>
-                            <?php $page = R::findOne('page', 'parent_id = ?', [$product['id']]); ?>
-                            <a class="button small" href="changePage.php?id=<?php echo $page['id']; ?>" title="Редактировать контент"><i class="bx bx-edit"></i></a>
-                        <?php endif; ?>
-                        <a class="button small" href="change.php?id=<?php echo $product['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
-                        <?php if ($product['type'] == 'category'): ?>
-                            <a class="button small" href="create.php?id=<?php echo $product['id']; ?>" title="Добавить"><i class="bx bx-plus"></i></a>
-                        <?php endif; ?>
-                        <a class="button small" href="delete.php?id=<?php echo $product['id']; ?>" title="Удалить" onclick="return confirmDelete();"><i class="bx bx-trash"></i></a>
-                        <?php if ($product['parent_id'] != '0'): ?>
-                            <a class="button small" href="parentUp.php?id=<?php echo $product['id']; ?>" title="Поднять на один уровень"><i class="bx bx-chevron-up"></i> Уровень вверх</a>
-                        <?php endif; ?>
-
-                        <?php if ($product['visibility'] == 'true'): ?>
-                            <a class="button small" href="toggleVisibility.php?id=<?php echo $product['id']; ?>"><i class="bx bx-show"></i></a>
-                        <?php else: ?>
-                            <a class="button small" href="toggleVisibility.php?id=<?php echo $product['id']; ?>"><i class="bx bx-hide"></i></a>
-                        <?php endif; ?>
-
-                        <hr class="product-divider">
-
-                        <span class="product-sort-order">Уровень приоритета: <?php echo $product['sort_order']; ?></span>
-                        <a class="button small" href="changeOrder.php?id=<?php echo $product['id']; ?>&direction=up"><i class="bx bx-up-arrow-alt"></i></a>
-                        <?php if ($product['sort_order'] != '0'): ?>
-                            <a class="button small" href="changeOrder.php?id=<?php echo $product['id']; ?>&direction=down"><i class="bx bx-down-arrow-alt"></i></a>
-                        <?php endif; ?>
+                            <?php if ($product['type'] == 'page'): ?>
+                                <?php $page = R::findOne('page', 'parent_id = ?', [$product['id']]); ?>
+                                <a class="button small" href="changePage.php?id=<?php echo $page['id']; ?>" title="Редактировать контент"><i class="bx bx-edit"></i></a>
+                            <?php endif; ?>
+                            <a class="button yellow small" href="change.php?id=<?php echo $product['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
+                            <?php if ($product['type'] == 'category'): ?>
+                                <a class="button green small" href="create.php?id=<?php echo $product['id']; ?>" title="Добавить"><i class="bx bx-plus"></i></a>
+                            <?php endif; ?>
+                            <a class="button red small" href="delete.php?id=<?php echo $product['id']; ?>" title="Удалить" onclick="return confirmDelete();"><i class="bx bx-trash"></i></a>
+                            <?php if ($product['parent_id'] != '0'): ?>
+                                <a class="button small" href="parentUp.php?id=<?php echo $product['id']; ?>" title="Поднять на один уровень"><i class="bx bx-chevron-up"></i> Уровень вверх</a>
+                            <?php endif; ?>
+    
+                            <?php if ($product['visibility'] == 'true'): ?>
+                                <a class="button small" href="toggleVisibility.php?id=<?php echo $product['id']; ?>"><i class="bx bx-show"></i></a>
+                            <?php else: ?>
+                                <a class="button small" href="toggleVisibility.php?id=<?php echo $product['id']; ?>"><i class="bx bx-hide"></i></a>
+                            <?php endif; ?>    
+                        </div>
                     </div>
                     <?php if ($product['type'] == 'category'): ?>
                         <?php $childProducts = R::findAll('product', 'parent_id = ? AND deleted = ? ORDER BY sort_order DESC, id ASC', [$product['id'], '0']); ?>
