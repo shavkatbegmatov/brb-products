@@ -37,10 +37,12 @@ if (isset($_SESSION['changedProductId'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="dashboard-body">
-    <a href="logout.php" class="button small"><i class='bx bx-exit'></i> Покинуть панель управления</a>
-    <a href="template.php" class="button small"><i class='bx bx-book-content'></i> Шаблоны страниц</a>
-    <a href="currency-exchange.php" class="button small"><i class='bx bx-dollar'></i> Курс валют</a>
-    <br>
+    <div class="buttons">
+        <a href="logout.php" class="button red"><i class='bx bx-exit'></i> Покинуть панель управления</a>
+        <a href="trash.php" class="button"><i class='bx bx-trash'></i> Корзина</a>
+        <a href="template.php" class="button"><i class='bx bx-book-content'></i> Шаблоны страниц</a>
+        <a href="currency-exchange.php" class="button"><i class='bx bx-dollar'></i> Курс валют</a>
+    </div>
     <br>
     <div class="products" id="products">
         <?php
@@ -55,7 +57,7 @@ if (isset($_SESSION['changedProductId'])) {
                     }
                 ?>
                 <div class="product">
-                    <div class="product-box" draggable="true" <?php if ($changedProduct): ?> id="last-changed" <?php endif; ?> data-product-id="<?php echo $product['id']; ?>">
+                    <div class="product-box" draggable="true" <?php if ($changedProduct): ?> id="last-changed" <?php endif; ?> data-product-id="<?php echo $product['id']; ?>" data-product-type="<?php echo $product['type']; ?>">
                         <div class="product-group">
                             <?php if ($product['type'] == 'category'): ?>
                                 <i class="bx bx-category-alt"></i>
@@ -79,7 +81,7 @@ if (isset($_SESSION['changedProductId'])) {
 
                             <?php if ($product['type'] == 'page'): ?>
                                 <?php $page = R::findOne('page', 'parent_id = ?', [$product['id']]); ?>
-                                <a class="button small" href="changePage.php?id=<?php echo $page['id']; ?>" title="Редактировать контент"><i class="bx bx-edit"></i></a>
+                                <a class="button yellow small" href="changePage.php?id=<?php echo $page['id']; ?>" title="Редактировать контент"><i class="bx bx-edit"></i></a>
                             <?php endif; ?>
                             <a class="button yellow small" href="change.php?id=<?php echo $product['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
                             <?php if ($product['type'] == 'category'): ?>
@@ -126,12 +128,16 @@ if (isset($_SESSION['changedProductId'])) {
 
         productList.addEventListener('dragenter', function (event) {
             if (event.target && event.target.hasAttribute('data-product-id')) {
-                event.target.classList.add('drag-over-target'); // Добавить класс
+                const targetProductType = event.target.getAttribute('data-product-type');
+
+                if (targetProductType !== 'page') {
+                    event.target.classList.add('drag-over-target'); // Добавить класс
+                }
             }
         });
 
         productList.addEventListener('dragleave', function (event) {
-            if (event.target && event.target.hasAttribute('data-product-id')) {
+            if (event.target && event.target.hasAttribute('data-product-id')) {             
                 event.target.classList.remove('drag-over-target'); // Удалить класс
             }
         });
@@ -140,8 +146,9 @@ if (isset($_SESSION['changedProductId'])) {
             event.preventDefault();
             const draggedProductId = event.dataTransfer.getData('text/plain');
             const targetProductId = event.target.getAttribute('data-product-id');
+            const targetProductType = event.target.getAttribute('data-product-type');
 
-            if (draggedProductId && targetProductId && draggedProductId !== targetProductId) {
+            if (draggedProductId && targetProductId && draggedProductId !== targetProductId && targetProductType !== 'page') {
                 const url = `changeParent.php?item_id=${draggedProductId}&target_id=${targetProductId}`;
                 window.location.href = url;
             }

@@ -27,10 +27,12 @@ while (end($target_product_parents) != '0') {
 }
 
 if (!in_array($_GET['item_id'], $target_product_parents)) {
-    $product['parent_id'] = $_GET['target_id'];
-
-    $id = R::store($product);
-    $_SESSION['changedProductId'] = $id;
+    if ($target_product['type'] != 'page') {
+        $product['parent_id'] = $_GET['target_id'];
+    
+        $id = R::store($product);
+        $_SESSION['changedProductId'] = $id;
+    }
 }
 
 header('Location: index.php');

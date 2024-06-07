@@ -24,19 +24,22 @@ $headings = R::findAll('heading');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="dashboard-body">
-    <a href="template.php" class="button small">Назад</a>
-    <a href="createHeading.php" class="button small"><i class="bx bx-plus"></i> Добавить заголовок</a>
-    <br>
+    <div class="buttons">
+        <a href="template.php" class="button">Назад</a>
+        <a href="createHeading.php" class="button"><i class="bx bx-plus"></i> Добавить заголовок</a>
+    </div>
     <br>
     <div class="products" id="products">
         <?php foreach ($headings as $heading): ?>
             <div class="product">
                 <div class="product-box">
-                    <?php echo $heading['name_ru']; ?> | <?php echo $heading['name_uz']; ?>
-
-                    <hr class="product-divider">
-
-                    <a class="button small" href="changeHeading.php?id=<?php echo $heading['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
+                    <div class="product-group">
+                        <i class="bx bx-menu"></i>
+    
+                        <?php echo $heading['name_ru']; ?>
+                    </div>
+                    
+                    <a class="button yellow small" href="changeHeading.php?id=<?php echo $heading['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
                 </div>
             </div>
         <?php endforeach; ?>

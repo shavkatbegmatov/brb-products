@@ -28,10 +28,11 @@ if (isset($_SESSION['changedTemplateId'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="dashboard-body">
-    <a href="index.php" class="button small">Назад</a>
-    <a href="createTemplate.php" class="button small"><i class="bx bx-plus"></i> Добавить шаблон</a>
-    <a href="heading.php" class="button small"><i class="bx bx-plus"></i> Заголовки</a>
-    <br>
+    <div class="buttons">
+        <a href="index.php" class="button">Назад</a>
+        <a href="createTemplate.php" class="button"><i class="bx bx-plus"></i> Добавить шаблон</a>
+        <a href="heading.php" class="button"><i class="bx bx-heading"></i> Список заголовков</a>
+    </div>
     <br>
     <div class="products" id="products">
         <?php foreach ($templates as $template): ?>
@@ -46,12 +47,18 @@ if (isset($_SESSION['changedTemplateId'])) {
             ?>
             <div class="product">
                 <div class="product-box" <?php if ($changedTemplate): ?> id="last-changed" <?php endif; ?>>
-                    <?php echo $template['name']; ?>
+                    <div class="product-group">
+                        <i class="bx bx-menu"></i>
+    
+                        <?php echo $template['name']; ?>
+                    </div>
 
-                    <hr class="product-divider">
-
-                    <a class="button small" href="changeTemplateHeadings.php?id=<?php echo $template['id']; ?>" title="Редактировать заголовки"><i class="bx bx-edit"></i></a>
-                    <a class="button small" href="changeTemplate.php?id=<?php echo $template['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
+                    <div class="product-group">
+                        <div class="buttons">
+                            <a class="button yellow small" href="changeTemplateHeadings.php?id=<?php echo $template['id']; ?>" title="Редактировать заголовки"><i class="bx bx-edit"></i></a>
+                            <a class="button yellow small" href="changeTemplate.php?id=<?php echo $template['id']; ?>" title="Редактировать"><i class="bx bx-pencil"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>

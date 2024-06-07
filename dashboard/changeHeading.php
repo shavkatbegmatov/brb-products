@@ -40,9 +40,6 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dashboard-body">
-    <a href="heading.php" class="button small">Назад</a>
-    <br>
-    <br>
     <form class="form" method="post" action="changeHeading.php?id=<?php echo $_GET['id']; ?>">
         <h1 class="heading">Редактировать заголовок</h1>
         <?php if (isset($_SESSION['message'])): ?>
@@ -51,15 +48,24 @@ if (!empty($_POST)) {
             </div>
         <?php endif; ?>
         <div class="input-container">
-            <label class="input-label">Название на узбекском</label>
+            <label class="input-label">Название на узбекском <img src="/img/uz.png"></label>
             <input name="name" type="text" class="input" value="<?php echo $heading['name_uz']; ?>">
         </div>
         <div class="input-container">
-            <label class="input-label">Название на русском</label>
+            <label class="input-label">Название на русском <img src="/img/ru.png"></label>
             <input name="name" type="text" class="input" value="<?php echo $template['name_ru']; ?>">
         </div>
         <hr>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Сохранить</button>
+            <a href="heading.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

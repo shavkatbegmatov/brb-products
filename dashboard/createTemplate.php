@@ -50,7 +50,16 @@ if (!empty($_POST)) {
             <input name="name" type="text" class="input">
         </div>
         <hr>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Создать</button>
+            <a href="template.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

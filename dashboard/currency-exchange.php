@@ -67,12 +67,8 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dashboard-body">
-    <a href="index.php" class="button small">Назад</a>
-    <br>
-    <br>
-
     <form class="form" method="POST" action="currency-exchange.php">
-        <h1 class="heading">Добавить</h1>
+        <h1 class="heading">Добавить курс валют</h1>
         <div class="input-container">
             <label class="input-label">Дата</label>
             <input class="input" type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
@@ -142,7 +138,16 @@ if (!empty($_POST)) {
             </div>
         </div>
         <hr>
-        <button class="button" type="submit">Добавить</button>
+        <div class="buttons">
+            <button class="button green">Добавить</button>
+            <a href="index.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

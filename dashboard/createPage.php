@@ -79,13 +79,13 @@ if (!empty($_POST)) {
             </div>
         <?php endif; ?>
         <?php if ($_GET['template_id'] == 0): ?>
-        <h2 class="form-subheading">На узбекском</h2>
+        <h2 class="form-subheading">На узбекском <img src="/img/uz.png"></h2>
         <div class="input-container">
             <label class="input-label">Контент</label>
             <textarea name="content_uz" type="text" class="input"></textarea>
         </div>
         <hr>
-        <h2 class="form-subheading">На русском</h2>
+        <h2 class="form-subheading">На русском <img src="/img/ru.png"></h2>
         <div class="input-container">
             <label class="input-label">Контент</label>
             <textarea name="content_ru" type="text" class="input"></textarea>
@@ -96,12 +96,12 @@ if (!empty($_POST)) {
                     <?php $headingobj = R::findOne('heading', 'id = ?', [$heading['heading_id']]); ?>
                     <div class="form-section">
                         <div class="input-container">
-                            <label class="input-label"><?php echo $headingobj['name_uz']; ?></label>
+                            <label class="input-label"><?php echo $headingobj['name_uz']; ?> <img src="/img/uz.png"></label>
                             <input name="<?php echo $headingobj['id']; ?>_uz" type="text" class="input">
                         </div>
                         <?php if ($_GET['template_id'] != '9'): ?>
                         <div class="input-container">
-                            <label class="input-label"><?php echo $headingobj['name_ru']; ?></label>
+                            <label class="input-label"><?php echo $headingobj['name_ru']; ?> <img src="/img/ru.png"></label>
                             <input name="<?php echo $headingobj['id']; ?>_ru" type="text" class="input">
                         </div>
                         <?php endif; ?>

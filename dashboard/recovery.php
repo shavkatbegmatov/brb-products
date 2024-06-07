@@ -20,7 +20,7 @@ if (!isset($_GET['id'])) {
 $id = intval($_GET['id']);
 
 // Recursive function to delete a product and its child products
-function deleteProduct($productId) {
+function recoveryProduct($productId) {
     // Load the product
     $product = R::load('product', $productId);
 
@@ -28,21 +28,17 @@ function deleteProduct($productId) {
         // Find and delete all child products
 
         // Delete the product
-        $product['deleted'] = 1;
+        $product['deleted'] = 0;
         
         R::store($product);
     }
 }
 
-// Get the parent_id before deleting the main product
-$product = R::load('product', $id);
-$parentProductId = $product->parent_id;
-
 // Delete the main product
-deleteProduct($id);
+recoveryProduct($id);
 
 // Set the changedProductId in session
-$_SESSION['changedProductId'] = $parentProductId;
+$_SESSION['changedProductId'] = $id;
 
 // Redirect to index
 header('Location: index.php');

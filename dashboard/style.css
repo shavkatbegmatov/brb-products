@@ -72,12 +72,19 @@
 }
 
 .input-label {
+	display: flex;
+	align-items: center;
+	gap: 5px;
     text-transform: capitalize;
 	font-size: 0.9rem;
 	font-weight: 500;
 	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	color: #24292e;
+}
+
+.input-label img {
+	width: 25px;
 }
 
 .input-description {
@@ -168,7 +175,10 @@ select.input {
 	gap: 8px;
 	border-radius: 4px;
 	border: none;
-	background-color: rgba(27, 31, 35, 0.035);
+	background-color: #fafbfc;
+	border: 1px solid rgba(27, 31, 35, 0.15);
+	box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+		rgba(255, 255, 255, 0.25) 0 1px 0 inset;
 	font-size: 1.1rem;
 	font-weight: 500;
 	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
@@ -184,8 +194,13 @@ select.input {
 	gap: 8px;
 }
 
-.product-box:hover, #last-changed {
-	background-color: rgba(27, 31, 35, 0.1);
+.product-box:hover {
+	background-color: #f3f4f6;
+}
+
+#last-changed {
+	background-color: #edeff2;
+	box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
 }
 
 .product-group > i {
@@ -207,7 +222,10 @@ select.input {
 	box-sizing: border-box;
 	color: #24292e;
 	cursor: pointer;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
 	text-decoration: none;
     text-align: center;
 	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
@@ -216,7 +234,7 @@ select.input {
 	font-weight: 500;
 	line-height: 20px;
 	list-style: none;
-	padding: 6px 16px;
+	padding: 6px 12px;
 	position: relative;
 	transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
 	user-select: none;
@@ -232,51 +250,57 @@ select.input {
 }
 
 .button.green {
-    background-color: #0cba0c;
-	border: 1px solid #0cba0c;
+    background-color: #28a745;
+	border: 1px solid #28a745;
     color: #fff;
 }
 
 .button.green:hover {
-    background-color: #0c950c;
-	border: 1px solid #0c950c;
+    background-color: #28a745;
+	border: 1px solid #28a745;
+    color: #fff;
 }
 
 .button.green:active {
-    background-color: #097909;
-	border: 1px solid #097909;
+    background-color: #28a745;
+	border: 1px solid #28a745;
+    color: #fff;
 }
 
 .button.red {
-    background-color: #ba0c0c;
-	border: 1px solid #ba0c0c;
+    background-color: #dc3545;
+	border: 1px solid #dc3545;
     color: #fff;
 }
 
 .button.red:hover {
-    background-color: #950c0c;
-	border: 1px solid #950c0c;
+    background-color: #dc3545;
+	border: 1px solid #dc3545;
+    color: #fff;
 }
 
 .button.red:active {
-    background-color: #790909;
-	border: 1px solid #790909;
+    background-color: #dc3545;
+	border: 1px solid #dc3545;
+    color: #fff;
 }
 
 .button.yellow {
-    background-color: #f3a811;
-	border: 1px solid #f3a811;
+    background-color: #ffc107;
+	border: 1px solid #ffc107;
     color: #fff;
 }
 
 .button.yellow:hover {
-    background-color: #da960f;
-	border: 1px solid #da960f;
+    background-color: #ffc107;
+	border: 1px solid #ffc107;
+    color: #fff;
 }
 
 .button.yellow:active {
-    background-color: #c3860c;
-	border: 1px solid #c3860c;
+    background-color: #ffc107;
+	border: 1px solid #ffc107;
+    color: #fff;
 }
 
 .input {
@@ -343,11 +367,18 @@ textarea.input {
 }
 
 .form-subheading {
+	display: flex;
+	align-items: center;
+	gap: 5px;
 	font-size: 1.2rem;
 	font-weight: 600;
 	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	color: #24292e;
+}
+
+.form-subheading img {
+	width: 25px;
 }
 
 .form-sections {

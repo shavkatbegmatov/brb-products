@@ -34,9 +34,6 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dashboard-body">
-    <a href="template.php" class="button small">Назад</a>
-    <br>
-    <br>
     <form class="form" method="post" action="createTemplate.php">
         <h1 class="heading">Создать заголовок</h1>
         <?php if (isset($_SESSION['message'])): ?>
@@ -45,15 +42,24 @@ if (!empty($_POST)) {
             </div>
         <?php endif; ?>
         <div class="input-container">
-            <label class="input-label">Название на узбекском</label>
+            <label class="input-label">Название на узбекском <img src="/img/uz.png"></label>
             <input name="name_uz" type="text" class="input">
         </div>
         <div class="input-container">
-            <label class="input-label">Название на русском</label>
+            <label class="input-label">Название на русском <img src="/img/ru.png"></label>
             <input name="name_ru" type="text" class="input">
         </div>
         <hr>
-        <button class="button">Готово</button>
+        <div class="buttons">
+            <button class="button green">Создать</button>
+            <a href="heading.php" class="button" onclick="return confirmCancel();">Отменить</a>
+        </div>
     </form>
+
+    <script>
+        function confirmCancel() {
+            return confirm('Вы уверены?');
+        }
+    </script>
 </body>
 </html>

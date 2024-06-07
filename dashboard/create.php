@@ -71,7 +71,7 @@ if (!empty($_POST)) {
                 <?php echo $_SESSION['message']; unset($_SESSION['message']); ?>
             </div>
         <?php endif; ?>
-        <h2 class="form-subheading">На узбекском</h2>
+        <h2 class="form-subheading">На узбекском <img src="/img/uz.png"></h2>
         <div class="input-container">
             <label class="input-label">Названия</label>
             <input name="name_uz" type="text" class="input">
@@ -81,7 +81,7 @@ if (!empty($_POST)) {
             <input name="description_uz" type="text" class="input">
         </div>
         <hr>
-        <h2 class="form-subheading">На русском</h2>
+        <h2 class="form-subheading">На русском <img src="/img/ru.png"></h2>
         <div class="input-container">
             <label class="input-label">Названия</label>
             <input name="name_ru" type="text" class="input">
